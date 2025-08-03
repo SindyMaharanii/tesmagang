@@ -1,0 +1,354 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #080505;
+  --dark-gray: #333333;
+  --medium-gray: #777777;
+  --light-gray: #f0f0f0;
+  --white: #ffffff;
+
+}
+
+
+
+.alert {
+    margin-top: 15px;
+    margin-bottom: 20px;                 
+}
+
+/* Layout Utama */
+body {
+  background-color: black !important;
+  color: var(--white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--dark-gray) !important;
+  padding: 15px 30px;
+  border-bottom: 2px solid var(--red);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white) !important;
+  margin-right: 30px;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  color: var(--white) !important;
+  transition: all 0.3s ease;
+  margin: 0 15px;
+}
+
+.nav-link:hover {
+  color: var(--red) !important;
+}
+
+/* Profile Dropdown */
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-name {
+    margin-right: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Konten Utama */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.product-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Form Styles */
+.product-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-size: 1rem;
+    color: var(--form-text);
+    color: #333 !important;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: 500;
+}
+
+/* Pastikan input dalam form berwarna hitam di atas background putih */
+.product-form input,
+.product-form textarea,
+.product-form select {
+    color: #000 !important;
+    background-color: #fff !important;
+    border: 1px solid #8313d7;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    color: #000 !important;
+    background-color: #fff !important;
+    border: 1px solid #8313d7 !important;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+
+.form-control,
+input.form-control,
+textarea.form-control,
+select.form-control {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+.form-control:focus {
+    border-color: #ff0000;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.1);
+}
+
+.edit-info {
+    color: var(--medium-gray); /* Warna untuk teks informasi */
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.edit-product-page .form-control {
+    color: #555; /* Warna teks lebih gelap */
+    background-color: #f9f9f9; /* Sedikit abu-abu untuk background */
+}
+
+.edit-product-page .form-label {
+    color: #444; /* Warna label lebih gelap */
+    font-weight: 600;
+}
+
+/* Button Styles */
+.btn-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #777;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Tabel Produk */
+.product-table {
+  width: 100%;
+  background-color: var(--white);
+  border-collapse: collapse;
+}
+
+.product-table th {
+  background-color: var(--dark-gray);
+  color: whitesmoke;
+  padding: 12px;
+  text-align: left;
+}
+
+.product-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--black);
+  color: black;
+}
+
+.product-table tr:hover {
+  background-color: rgba(255, 0, 0, 0.05);
+}
+
+/* Tombol Aksi */
+.btn-action {
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin: 0 3px;
+  transition: all 0.3s ease;
+}
+
+.btn-view {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-edit {
+  background-color: #f39c12;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Card Global Style */
+.custom-card {
+    background-color: #1e1e1e; /* abu gelap biar beda dari background hitam */
+    color: #fff; /* teks putih */
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    font-size: 17px; /* Ukuran default sedikit lebih besar */
+}
+
+/* Card Header */
+.custom-card-header {
+    background-color: #ff0000; /* merah */
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.4rem; /* judul lebih besar */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Card Body */
+.custom-card-body {
+    padding: 22px;
+    font-size: 1.1rem; /* sebelumnya 16px = 1rem, ini dinaikkan sedikit */
+    line-height: 1.6;  /* biar lebih lega */
+}
+
+/* Info Label */
+.custom-card-body strong {
+    color: #ccc; /* abu terang untuk label */
+    font-size: 1.1rem;
+}
+
+/* Harga Produk */
+.custom-card-body .price {
+    color: #00ff00; /* hijau */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Tombol di Card */
+.custom-card .btn {
+    padding: 8px 16px;
+    font-size: 1rem; /* biar konsisten */
+}
+
+.edit-heading {
+  font-size: 1.8rem;
+  color: #ff4444;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.edit-product-page h2 {
+  font-size: 1.8rem;
+  color: #ff4444;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.edit-product-page h2 i {
+  color: #ffaa00;
+  margin-right: 8px;
+}
+
+.card {
+    background-color: #000000 !important;  /* putih */
+    color: #fffdfd !important;             /* teks hitam */
+}
+
+.card label,
+.card input,
+.card button,
+.card a,
+.card-header {
+    color: #ffffff !important;
+    background-color: #000000 !important;
+}
+
+.card .btn-link {
+    color: #007bff !important; /* warna biru default link */
+}
+
+input, textarea {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+input[type="checkbox"] {
+    accent-color: #3b82f6; /* hijau terang, bisa ganti ke biru (#3b82f6) */
+     background-color: #1f2937 !important; /* bg-gray-800 agar sesuai dark mode */
+    border-radius: 0.25rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark-gray);
+  color: var(--white);
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
