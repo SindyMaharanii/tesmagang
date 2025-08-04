@@ -1,54 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="product-card">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0">
-            <i class="fas {{ isset($product) ? 'fa-edit' : 'fa-plus-circle' }} mr-2"></i>
-            {{ isset($product) ? 'Edit Product' : 'Add New Product' }}
-        </h2>
-        @if(isset($product))
-        <small class="text-muted">Last updated by: {{ $product->user->name }}</small>
-        @endif
+<div class="custom-card product-form">
+    <div class="custom-card-header mb-4">
+        <i class="fas {{ isset($product) ? 'fa-edit' : 'fa-plus-circle' }}"></i>
+        {{ isset($product) ? 'Edit Product' : 'Add New Product' }}
     </div>
 
-    <form method="POST" action="{{ isset($product) ? route('products.update', $product->id) : route('products.store') }}">
-        @csrf
-        @if(isset($product)) @method('PUT') @endif
+    <div class="custom-card-body">
+        @if(isset($product))
+        <p class="edit-info">Last updated by: {{ $product->user->name }}</p>
+        @endif
 
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label">Product Name</label>
-            <div class="col-md-9">
-                <input type="text" class="form-control" name="name" 
-                       value="{{ old('name', $product->name ?? '') }}" required>
+        <form method="POST" action="{{ isset($product) ? route('products.update', $product->id) : route('products.store') }}">
+            @csrf
+            @if(isset($product)) @method('PUT') @endif
+
+            <div class="form-group mb-4">
+                <label class="form-label">Product Name</label>
+                <input type="text" class="form-control" name="name"
+                    value="{{ old('name', $product->name ?? '') }}" required>
             </div>
-        </div>
 
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label">Description</label>
-            <div class="col-md-9">
-                <textarea class="form-control" name="description" rows="3">{{ old('description', $product->description ?? '') }}</textarea>
+            <div class="form-group mb-4">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" name="description" rows="3"
+                    required>{{ old('description', $product->description ?? '') }}</textarea>
             </div>
-        </div>
 
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label">Price</label>
-            <div class="col-md-9">
-                <input type="number" class="form-control" name="price" 
-                       value="{{ old('price', $product->price ?? '') }}" required>
+            <div class="form-group mb-4">
+                <label class="form-label">Price</label>
+                <input type="number" class="form-control" name="price"
+                    value="{{ old('price', $product->price ?? '') }}" required>
             </div>
-        </div>
 
-        <div class="form-group row">
-            <label class="col-md-3 col-form-label">Stock</label>
-            <div class="col-md-9">
-                <input type="number" class="form-control" name="stock" 
-                       value="{{ old('stock', $product->stock ?? '') }}" required>
+            <div class="form-group mb-4">
+                <label class="form-label">Stock</label>
+                <input type="number" class="form-control" name="stock"
+                    value="{{ old('stock', $product->stock ?? '') }}" required>
             </div>
-        </div>
 
-        <div class="form-group row mt-4">
-            <div class="col-md-9 offset-md-3">
+            <div class="btn-container mt-4">
                 <button type="submit" class="btn btn-primary">
                     <i class="fas fa-save mr-1"></i> {{ isset($product) ? 'Update' : 'Save' }}
                 </button>
@@ -56,7 +48,7 @@
                     <i class="fas fa-times mr-1"></i> Cancel
                 </a>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 @endsection

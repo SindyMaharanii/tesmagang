@@ -101,7 +101,7 @@ body {
 .form-label {
     font-size: 1rem;
     color: var(--form-text);
-    color: #333 !important;
+    color: #ffffff !important;
     margin-bottom: 0.5rem;
     display: block;
     font-weight: 500;
@@ -127,7 +127,7 @@ textarea,
 select {
     color: #000 !important;
     background-color: #fff !important;
-    border: 1px solid #8313d7 !important;
+    border: 1px solid #ffffff !important;
     padding: 0.75rem;
     font-size: 1rem;
 }
@@ -246,6 +246,15 @@ select.form-control {
   transform: translateY(-2px);
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.action-buttons form {
+  display: inline-block; /* atau gunakan flex kalau mau ekstra konsisten */
+}
 
 /* Card Global Style */
 .custom-card {
@@ -339,9 +348,10 @@ input, textarea {
 }
 
 input[type="checkbox"] {
-    accent-color: #3b82f6; /* hijau terang, bisa ganti ke biru (#3b82f6) */
-     background-color: #1f2937 !important; /* bg-gray-800 agar sesuai dark mode */
-    border-radius: 0.25rem;
+    accent-color: #3b82f6; /* biru kontras */
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
 }
 
 /* Footer */

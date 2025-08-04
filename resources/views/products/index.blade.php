@@ -38,21 +38,21 @@
                     <td>Rp {{ number_format($product->price, 0, ',', '.') }}</td>
                     <td>{{ $product->stock }}</td>
                     <td>
-                        <div class="d-flex">
-                            <a href="{{ route('products.show', $product->id) }}" class="btn-action btn-view" title="View">
-                                <i class="fas fa-eye"></i>
-                            </a>
-                            <a href="{{ route('products.edit', $product->id) }}" class="btn-action btn-edit" title="Edit">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn-action btn-delete" title="Delete" onclick="return confirm('Are you sure?')">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </form>
-                        </div>
+                      <div class="action-buttons">
+        <a href="{{ route('products.show', $product->id) }}" class="btn-action btn-view me-2" title="View">
+            <i class="fas fa-eye"></i>
+        </a>
+        <a href="{{ route('products.edit', $product->id) }}" class="btn-action btn-edit me-2" title="Edit">
+            <i class="fas fa-edit"></i>
+        </a>
+        <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="m-0">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn-action btn-delete me-2" title="Delete" onclick="return confirm('Are you sure?')">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </form>
+    </div>
                     </td>
                 </tr>
                 @endforeach
